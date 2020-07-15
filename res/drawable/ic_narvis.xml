@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="5120dp"
-    android:height="5120dp"
-    android:viewportWidth="5120"
-    android:viewportHeight="5120">
+    android:viewportWidth="185.2083"
+    android:viewportHeight="52.91667"
+    android:width="700dp"
+    android:height="200dp"
+    android:tint="@*android:color/accent_device_default_light">
 
     <path
         android:fillColor="#010104"

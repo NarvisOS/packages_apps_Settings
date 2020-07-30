@@ -22,7 +22,8 @@ LOCAL_USE_AAPT2 := true
 
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
-LOCAL_SRC_FILES += $(call all-java-files-under, ../Friday/src)
+LOCAL_SRC_FILES += $(call all-java-files-under, ../friday/src)
+
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx-constraintlayout_constraintlayout \
     androidx.slice_slice-builders \
@@ -55,10 +56,13 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     faceunlock_utils
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
-    packages/apps/Friday/res
+    packages/apps/friday/res
 
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+
+LOCAL_AAPT_FLAGS := --auto-add-overlay \
+    --extra-packages com.narvis.settings
 
 ifneq ($(INCREMENTAL_BUILDS),)
     LOCAL_PROGUARD_ENABLED := disabled

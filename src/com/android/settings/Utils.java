@@ -1061,13 +1061,6 @@ public final class Utils extends com.android.settingslib.Utils {
         }
     }
 
-    public static String normalizeTitleCaseIfRequired(Context context, String input) {
-        if (!context.getResources().getBoolean(R.bool.language_capitalizes_nouns)) {
-            return input.toLowerCase();
-        }
-        return input;
-    }
-    
     public static boolean isFaceDisabledByAdmin(Context context) {
         DevicePolicyManager devicePolicyManager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
         try {

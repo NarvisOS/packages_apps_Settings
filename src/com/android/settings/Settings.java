@@ -180,5 +180,5 @@ public class Settings extends SettingsActivity {
 
 
    // friday
-    public static class fridayActivity extends SettingsActivity { /* empty */ }
+    public static class ControlPanelActivity extends SettingsActivity { /* empty */ }
 }

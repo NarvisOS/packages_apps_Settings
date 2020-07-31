@@ -18,7 +18,7 @@
 }
 
 # friday
--keep class com.android.settings.**
+-keep class com.narvis.settings.**
 
 
 

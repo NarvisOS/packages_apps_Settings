@@ -18,12 +18,12 @@
     <string name="about_device_name">Device</string>
     <string name="build_date">Build date</string>
     <string name="build_maintainer">Build maintainer</string>
-    <string name="rom_version">Narvis version</string>
+    <string name="rom_version">Narvis Version</string>
     <string name="rom_version_default">Unknown</string>
 
 	
    <!-- Friday -->
     <string name="friday_title">friday</string>
-    <string name="friday_summary">To your command</string>
+    <string name="friday_summary">Expect The Unexpected !</string>
    
 </resources>

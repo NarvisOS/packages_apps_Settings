@@ -34,8 +34,8 @@ public class RomVersionDetailPreferenceController extends BasePreferenceControll
 
     private static final Uri INTENT_URI_DATA = Uri.parse("https://paypal.me/tronnayan/");
     private static final String TAG = "romDialogCtrl";
-    private static final String KEY_ROM_VERSION_PROP = "org.narvis.build_version";
-    private static final String KEY_ROM_RELEASETYPE_PROP = "org.narvis.build_type";
+    private static final String KEY_ROM_VERSION_PROP = "ro.narvis.version";
+    private static final String KEY_ROM_RELEASETYPE_PROP = "ro.narvis.buildtype";
 
     private final PackageManager mPackageManager;
 

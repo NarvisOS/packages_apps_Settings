@@ -21,6 +21,10 @@
     android:key="firmware_version_screen"
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
+    <!-- NarvisOS Logo -->
+     <Preference
+        android:key="n_logo"
+        android:layout="@layout/narvis_logo" />
 
     <!-- Android version -->
     <Preference

@@ -20,37 +20,45 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 
 import androidx.preference.Preference;
 
+import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
-import com.android.settingslib.DeviceInfoUtils;
 
-public class SecurityPatchLevelPreferenceController extends BasePreferenceController {
+public class RomVersionDetailPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "SecurityPatchCtrl";
-    private static final Uri INTENT_URI_DATA = Uri.parse("https://source.android.com/security/bulletin/");
+    private static final Uri INTENT_URI_DATA = Uri.parse("https://paypal.me/tronnayan/");
+    private static final String TAG = "romDialogCtrl";
+    private static final String KEY_ROM_VERSION_PROP = "ro.narvis.version";
+    private static final String KEY_ROM_RELEASETYPE_PROP = "ro.narvis.buildtype";
 
     private final PackageManager mPackageManager;
-    private final String mCurrentPatch;
 
-    public SecurityPatchLevelPreferenceController(Context context, String key) {
+    public RomVersionDetailPreferenceController(Context context, String key) {
         super(context, key);
         mPackageManager = mContext.getPackageManager();
-        mCurrentPatch = DeviceInfoUtils.getSecurityPatch();
     }
 
     @Override
     public int getAvailabilityStatus() {
-        return !TextUtils.isEmpty(mCurrentPatch)
-                ? AVAILABLE : CONDITIONALLY_UNAVAILABLE;
+        return AVAILABLE;
     }
 
     @Override
     public CharSequence getSummary() {
-        return mCurrentPatch;
+        String romVersion = SystemProperties.get(KEY_ROM_VERSION_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        String romReleasetype =  SystemProperties.get(KEY_ROM_RELEASETYPE_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        if (!romVersion.isEmpty() && !romReleasetype.isEmpty())
+            return romVersion + " | " + romReleasetype;
+        else
+            return mContext.getString(R.string.rom_version_default);
     }
 
     @Override
